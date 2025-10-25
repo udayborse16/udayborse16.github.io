@@ -1,29 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
 
-    // Function to apply the saved theme
-    const applyTheme = () => {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-mode');
-        } else {
-            body.classList.remove('dark-mode');
-        }
+    // --- 1. Scroll-In Animation (Intersection Observer) ---
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const observerOptions = {
+        root: null, // observes intersections relative to the viewport
+        rootMargin: '0px',
+        threshold: 0.1 // 10% of the element must be visible
     };
 
-    // Apply theme on load
-    applyTheme();
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Stop observing the element once it's visible
+                observer.unobserve(entry.target); 
+            }
+        });
+    };
 
-    // Toggle theme on button click
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        
-        // Save the user's preference
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
-        }
+    const intersectionObserver = new IntersectionObserver(observerCallback, observerOptions);
+
+    fadeElements.forEach(el => {
+        intersectionObserver.observe(el);
     });
+
+
+    // --- 2. Abstract Background Parallax Effect ---
+    const animatedBg = document.querySelector('.animated-bg');
+
+    // Only add this effect if the element exists and user prefers motion
+    if (animatedBg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        
+        window.addEventListener('mousemove', (e) => {
+            // Get mouse position as a value from -1 to 1
+            const x = (e.clientX / window.innerWidth) * 2 - 1;
+            const y = (e.clientY / window.innerHeight) * 2 - 1;
+
+            // Define the maximum movement (in pixels)
+            const moveX = x * -15; // Move -15px to 15px
+            const moveY = y * -15; // Move -15px to 15px
+
+            // Apply the transform
+            // Using requestAnimationFrame for better performance
+            window.requestAnimationFrame(() => {
+                animatedBg.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+    }
+
 });
