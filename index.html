@@ -3,94 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Your Name - Abstract Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <div class="animated-bg">
+        <span class="shape"></span>
+        <span class="shape"></span>
+        <span class="shape"></span>
+        <span class="shape"></span>
+        <span class="shape"></span>
+        <span class="shape"></span>
+        <span class="shape"></span>
+        <span class="shape"></span>
+        <span class="shape"></span>
+        <span class="shape"></span>
+    </div>
+
     <header>
         <div class="container">
-            <h1>Your Name</h1>
-            <p>Your Title (e.g., Software Developer, Electrical Engineer)</p>
+            <div class="logo">Your Name</div>
             <nav>
                 <ul>
+                    <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button id="theme-toggle">Toggle Dark Mode</button>
         </div>
     </header>
 
-    <main class="container">
-        <section id="about">
-            <h2>👋 About Me</h2>
-            <p>
-                Hello! I'm [Your Name], a passionate and dedicated [Your Profession/Field] based in [Your Location]. 
-                I specialize in [Your Specialization 1] and [Your Specialization 2]. I love solving complex problems 
-                and building interesting things.
-            </p>
-            <p>
-                Write another paragraph here about your background, your education, or your core values. 
-                Keep it professional but personal.
-            </p>
-        </section>
-
-        <hr>
-
-        <section id="projects">
-            <h2>🚀 My Projects</h2>
-            <div class="project-grid">
-
-                <div class="project-card">
-                    <h3>Project Title 1</h3>
-                    <p>
-                        A brief description of your project. What problem does it solve? 
-                        What technologies did you use? (e.g., Java, Python, MATLAB, etc.)
-                    </p>
-                    <a href="#" target="_blank">View on GitHub</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Project Title 2</h3>
-                    <p>
-                        A brief description of your second project. Keep it concise and 
-                        focused on the outcome and your role.
-                    </p>
-                    <a href="#" target="_blank">Live Demo</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Project Title 3</h3>
-                    <p>
-                        A brief description of your third project. You can add as many 
-                        of these project cards as you like.
-                    </p>
-                    <a href="#" target="_blank">View on GitHub</a>
-                </div>
-
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1 class="animate-in">Crafting Ideas into Reality</h1>
+                <p class="animate-in delay-1">I'm a [Your Title] specializing in [Your Specialization].</p>
+                <a href="#projects" class="cta-button animate-in delay-2">View My Work</a>
             </div>
         </section>
 
-        <hr>
+        <section id="about" class="content-section fade-in">
+            <div class="container card">
+                <h2>About Me</h2>
+                <p>Hello! I'm [Your Name]. I am passionate about [Your Field] and love to create innovative solutions. My background in [Your Background/Education] gives me a unique perspective on solving complex problems.</p>
+                <p>I thrive on challenges and am constantly learning new technologies. When I'm not coding/working, I enjoy [Your Hobby].</p>
+            </div>
+        </section>
 
-        <section id="contact">
-            <h2>📫 Get in Touch</h2>
-            <p>
-                I'm always open to discussing new projects, creative ideas, or opportunities. 
-                Feel free to reach out!
-            </p>
-            <ul>
-                <li><strong>Email:</strong> <a href="mailto:youremail@example.com">youremail@example.com</a></li>
-                <li><strong>LinkedIn:</strong> <a href="#" target="_blank">linkedin.com/in/yourprofile</a></li>
-                <li><strong>GitHub:</strong> <a href="#" target="_blank">github.com/yourusername</a></li>
-            </ul>
+        <section id="projects" class="content-section fade-in">
+            <div class="container">
+                <h2 class="text-center">My Projects</h2>
+                <div class="project-list">
+                    
+                    <div class="project-item card fade-in">
+                        <div class="project-text">
+                            <h3>Project Title 1</h3>
+                            <p>A brief description of your project. What problem does it solve? What technologies did you use? (e.g., Java, Python, MATLAB, etc.)</p>
+                            <a href="#" target="_blank" class="project-link">View on GitHub &rarr;</a>
+                        </div>
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/480x270.png?text=Project+Screenshot" alt="Project 1">
+                        </div>
+                    </div>
+
+                    <div class="project-item card fade-in">
+                        <div class="project-text">
+                            <h3>Project Title 2</h3>
+                            <p>A brief description of your second project. Keep it concise and focused on the outcome and your role.</p>
+                            <a href="#" target="_blank" class="project-link">Live Demo &rarr;</a>
+                        </div>
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/480x270.png?text=Project+Screenshot" alt="Project 2">
+                        </div>
+                    </div>
+
+                    <div class="project-item card fade-in">
+                        <div class="project-text">
+                            <h3>Project Title 3</h3>
+                            <p>A brief description of your third project. You can add more of these project items as needed.</p>
+                            <a href="#" target="_blank" class="project-link">View on GitHub &rarr;</a>
+                        </div>
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/480x270.png?text=Project+Screenshot" alt="Project 3">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section fade-in">
+            <div class="container card">
+                <h2>Get in Touch</h2>
+                <p>I'm currently available for new opportunities. Whether you have a question or just want to say hi, my inbox is always open!</p>
+                <a href="mailto:youremail@example.com" class="cta-button">Email Me</a>
+                <div class="social-links">
+                    <a href="#" target="_blank">LinkedIn</a>
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">Twitter</a>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 by Your Name. All rights reserved.</p>
+        <p>&copy; 2025 by Your Name. Built with abstract thoughts.</p>
     </footer>
 
     <script src="script.js"></script>
