@@ -49,4 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-});
+}); // <-- This is the end of the script.js file
