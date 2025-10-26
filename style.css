@@ -202,3 +202,29 @@ header nav a:hover::after {
     color: #b0b0b0;
     margin: 0 0 1.5rem;
 }
+
+/* --- Add this to your style.css --- */
+
+.certificate-image-card {
+    min-height: 200px; /* Give the card a height so you can see the image */
+    background-size: cover; /* Makes the image cover the whole card */
+    background-position: center;
+    padding: 0; /* Remove padding to let the image fill the card */
+}
+
+.certificate-image-card:hover {
+    /* You can add a specific hover effect here if you like */
+    box-shadow: 0 12px 40px 0 rgba(0, 198, 255, 0.5);
+    border: 1px solid var(--primary-color);
+}
+
+/* --- You must define the image for each card --- */
+#cert-card-1 {
+    background-image: url('my-certificate.jpg');
+}
+
+/* For your next card, you would add:
+#cert-card-2 {
+    background-image: url('my-second-certificate.jpg');
+}
+*/
