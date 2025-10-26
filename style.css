@@ -165,4 +165,40 @@ header nav a:hover::after {
 }
 
 .hero-content h1 {
+
     font-size:
+
+
+
+
+    /* --- Certificate Section --- */
+.certificate-grid {
+    display: grid;
+    /* Creates a responsive grid that fits as many columns as possible */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Style the certificate card content */
+.certificate-grid .card {
+    padding: 2rem; /* A bit less padding for smaller cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-grid .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+.cert-issuer {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0.5rem 0 0.2rem;
+}
+
+.cert-date {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin: 0 0 1.5rem;
+}
